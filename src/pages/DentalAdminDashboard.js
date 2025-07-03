@@ -203,7 +203,7 @@ const DentalAdminDashboard = () => {
       }
       
       const reader = new FileReader();
-      reader.onload = (event) => {
+      reader.onload =  (event) => {
         const newFile = {
           name: file.name,
           url: event.target.result,
@@ -285,10 +285,10 @@ const DentalAdminDashboard = () => {
 
   const renderDashboard = () => (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-gray-800">Dashboard Overview</h1>
-      
+  <h1 className="text-xl sm:text-3xl font-bold text-gray-800">Dashboard Overview</h1>
+  
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-xl shadow-lg">
           <div className="flex items-center justify-between">
             <div>
@@ -331,7 +331,7 @@ const DentalAdminDashboard = () => {
       </div>
 
       {/* Recent Activity Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         <div className="bg-white p-6 rounded-xl shadow-lg">
           <h2 className="text-xl font-semibold mb-4">Upcoming Appointments</h2>
           <div className="space-y-3 max-h-96 overflow-y-auto">
@@ -391,20 +391,20 @@ const DentalAdminDashboard = () => {
 
   const renderPatients = () => (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-800">Patient Records</h1>
-        <button 
-          onClick={() => openModal('patient')}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors"
-        >
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0">
+  <h1 className="text-xl sm:text-3xl font-bold text-gray-800">Patient Records</h1>
+  <button 
+    onClick={() => openModal('patient')}
+    className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-700 transition-colors"
+  >
           <Plus className="h-4 w-4" />
           <span>Add New Patient</span>
         </button>
       </div>
 
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-        {patients.length === 0 ? (
-          <div className="p-8 text-center">
+      {patients.length === 0 ? (
+        <div className="p-4 sm:p-8 text-center">
             <Users className="h-16 w-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">No patients yet</h3>
             <p className="text-gray-500">Get started by adding your first patient.</p>
@@ -466,14 +466,14 @@ const DentalAdminDashboard = () => {
 
   const renderAppointments = () => (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-800">Appointment Schedule</h1>
-        <button 
-          onClick={() => openModal('incident')}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors"
-          disabled={patients.length === 0}
-          title={patients.length === 0 ? "Add patients first" : "Schedule new appointment"}
-        >
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0">
+  <h1 className="text-xl sm:text-3xl font-bold text-gray-800">Appointment Schedule</h1>
+  <button 
+    onClick={() => openModal('incident')}
+    className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-700 transition-colors"
+    disabled={patients.length === 0}
+    title={patients.length === 0 ? "Add patients first" : "Schedule new appointment"}
+  >
           <Plus className="h-4 w-4" />
           <span>New Appointment</span>
         </button>
@@ -584,14 +584,14 @@ const DentalAdminDashboard = () => {
 
     return (
       <div className="space-y-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-gray-800">Calendar View</h1>
-          <div className="flex items-center space-x-4">
-            <button 
-              onClick={previousMonth} 
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              title="Previous month"
-            >
+       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0">
+  <h1 className="text-xl sm:text-3xl font-bold text-gray-800">Calendar View</h1>
+  <div className="flex items-center justify-center space-x-4">
+    <button 
+      onClick={previousMonth} 
+      className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+      title="Previous month"
+    >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <span className="text-xl font-semibold min-w-[200px] text-center">
@@ -960,73 +960,77 @@ const DentalAdminDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-100">
 
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                 <img 
-                src="/assets/logo.png" 
-                alt="Dental Logo" 
-                className="w-8 h-8 filter invert brightness-0"
-                onError={(e) => {
-                  console.log('Image failed to load:', e.target.src);
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-                onLoad={() => console.log('Image loaded successfully')}
-              />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">ENTNT Dental Center</h1>
-                <p className="text-sm text-gray-500">Admin Dashboard</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">Welcome, Dr. Admin</span>
-              <button 
-                onClick={handleLogout}
-                className="flex items-center space-x-2 text-gray-600 hover:text-red-600 transition-colors"
-                title="Logout"
-              >
-                <LogOut className="h-4 w-4" />
-              </button>
-              <div className="h-8 w-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-medium text-sm">DA</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        <div className="mb-8">
-          <nav className="flex space-x-8">
-            {[
-              { id: 'dashboard', label: 'Dashboard', icon: DollarSign },
-              { id: 'patients', label: 'Patients', icon: Users },
-              { id: 'appointments', label: 'Appointments', icon: FileText },
-              { id: 'calendar', label: 'Calendar', icon: Calendar }
-            ].map(tab => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-colors ${
-                    activeTab === tab.id
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
-          </nav>
+<header className="bg-white shadow-sm border-b">
+  <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+    <div className="flex justify-between items-center h-16">
+      <div className="flex items-center space-x-2 min-w-0">
+        <div className="bg-blue-600 p-2 rounded-lg flex-shrink-0">
+          <img 
+            src="/assets/logo.png" 
+            alt="Dental Logo" 
+            className="w-6 h-6 sm:w-8 sm:h-8 filter invert brightness-0"
+            onError={(e) => {
+              console.log('Image failed to load:', e.target.src);
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'flex';
+            }}
+            onLoad={() => console.log('Image loaded successfully')}
+          />
         </div>
+        <div className="min-w-0">
+          <h1 className="text-sm sm:text-xl font-bold text-gray-900 truncate">ENTNT Dental</h1>
+          <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">Admin Dashboard</p>
+        </div>
+      </div>
+      <div className="flex items-center space-x-2 sm:space-x-4">
+        <span className="text-xs sm:text-sm text-gray-600 hidden sm:block">Welcome, Dr. Admin</span>
+        <button 
+          onClick={handleLogout}
+          className="flex items-center space-x-1 sm:space-x-2 text-gray-600 hover:text-red-600 transition-colors"
+          title="Logout"
+        >
+          <LogOut className="h-4 w-4" />
+          <span className="text-xs sm:hidden">Logout</span>
+        </button>
+        <div className="h-6 w-6 sm:h-8 sm:w-8 bg-blue-600 rounded-full flex items-center justify-center">
+          <span className="text-white font-medium text-xs sm:text-sm">DA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
+
+        
+        <div className="mb-4 sm:mb-8">
+  <nav className="flex space-x-1 sm:space-x-8 overflow-x-auto pb-2 sm:pb-0">
+    {[
+      { id: 'dashboard', label: 'Dashboard', icon: DollarSign },
+      { id: 'patients', label: 'Patients', icon: Users },
+      { id: 'appointments', label: 'Appointments', icon: FileText },
+      { id: 'calendar', label: 'Calendar', icon: Calendar }
+    ].map(tab => {
+      const Icon = tab.icon;
+      return (
+        <button
+          key={tab.id}
+          onClick={() => setActiveTab(tab.id)}
+          className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 rounded-lg font-medium transition-colors whitespace-nowrap ${
+            activeTab === tab.id
+              ? 'bg-blue-600 text-white'
+              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+          }`}
+        >
+          <Icon className="h-4 w-4" />
+          <span className="text-xs sm:text-sm">{tab.label}</span>
+        </button>
+      );
+    })}
+  </nav>
+</div>
 
         {activeTab === 'dashboard' && renderDashboard()}
         {activeTab === 'patients' && renderPatients()}
