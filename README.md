@@ -1,6 +1,4 @@
-# Let's generate a complete README.md file based on the provided content and structure.
 
-readme_content = """
 # 🦷 ENTNT Dental Center - Frontend Assignment
 
 A responsive, frontend-only Dental Center Management System built with React. This project fulfills the requirements of the ENTNT Technical Assignment and includes Admin and Patient portals with full functionality and modern UI/UX.
