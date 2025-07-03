@@ -74,17 +74,17 @@ Password: patient123
 -localStorage	Data persistence (no backend)
 
 🗂 Folder Structure
-public/
-  └── assets/
-src/
-  ├── components/
-  ├── context/
-  ├── data/
-  ├── pages/
-  ├── App.js
-  └── index.css
-tailwind.config.js
-package.json
+<br>public/
+<br>  └── assets/
+<br>src/
+<br>  ├── components/
+<br>  ├── context/
+<br>  ├── data/
+<br>  ├── pages/
+<br>  ├── App.js
+<br>  └── index.css
+<br>tailwind.config.js
+<br>package.json
 
 ❗ Known Issues
 -No actual backend or API (by design of assignment)
