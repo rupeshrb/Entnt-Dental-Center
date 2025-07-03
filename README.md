@@ -1,42 +1,107 @@
-live On :- https://entnt-dental-center-eta.vercel.app/
+# Let's generate a complete README.md file based on the provided content and structure.
 
-## Available Scripts
+readme_content = """
+# 🦷 ENTNT Dental Center - Frontend Assignment
 
-In the project directory, you can run:
+A responsive, frontend-only Dental Center Management System built with React. This project fulfills the requirements of the ENTNT Technical Assignment and includes Admin and Patient portals with full functionality and modern UI/UX.
 
-### `npm start`
+> ✅ **Live on Vercel:** [https://entnt-dental-center-eta.vercel.app](https://entnt-dental-center-eta.vercel.app)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Quick Start
 
-### `npm test`
+### 📋 Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
 
-### `npm run build`
+### ⚙️ Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# 1. Clone the repository
+git clone https://github.com/rupeshrb/Entnt-Dental-Center.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 2. Navigate into the project directory
+cd Entnt-Dental-Center
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 3. Install dependencies
+npm install
+# or
+yarn install
 
-### `npm run eject`
+# 4. Start the development server
+npm start
+# or
+yarn start
+```
+🔐 Demo Credentials
+👨‍⚕️ Admin Login
+Email: admin@entnt.in
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Password: admin123
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 Patient Login
+Email: john@entnt.in
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Password: patient123
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🧠 Features
+🔒 Authentication & Access Control
+-Role-based (Admin & Patient)
+-Simulated login using localStorage
+-Protected routes with context-based auth
 
+👥 Admin Portal
+-Patient CRUD (Add/Edit/Delete)
+-Appointment lifecycle management
+-Calendar integration
+-Revenue & KPI dashboard
+-File uploads (base64) with preview
+
+🧾 Patient Portal
+-View personal profile
+-See upcoming & past appointments
+-Download attached files
+-Fully responsive UI
+
+🛠 Architecture
+📦 Tech Stack
+-Tool	Purpose
+-React 18	Frontend Framework
+-React Router	Navigation
+-Context API	Global state management
+-Tailwind CSS	Responsive utility-first styling
+-Lucide React	Icon library
+-localStorage	Data persistence (no backend)
+
+🗂 Folder Structure
+public/
+  └── assets/
+src/
+  ├── components/
+  ├── context/
+  ├── data/
+  ├── pages/
+  ├── App.js
+  └── index.css
+tailwind.config.js
+package.json
+
+❗ Known Issues
+-No actual backend or API (by design of assignment)
+-Authentication is simulated (no real user verification)
+-No form-level validation libraries used
+-Large component files could be refactored into smaller ones
+
+💡 Technical Decisions
+-Context API was used over Redux for simpler state sharing between auth and UI
+-localStorage was used for persisting patient/appointment/file data
+-Base64 encoding was chosen for handling file uploads in a frontend-only environment
+-Calendar view was built using native JS Date instead of external libraries
+-Tailwind CSS helped achieve fast, responsive, and mobile-first UI development
+
+<br>
 Output :-
 <br>
 <div>
