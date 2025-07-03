@@ -535,50 +535,50 @@ const PatientDashboard = () => {
     <div className="min-h-screen bg-gray-50">
 
       <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              <div className="bg-blue-500 p-2 rounded-lg">
-                <img 
-                  src="/assets/logo.png" 
-                  alt="Logo" 
-                  className="w-8 h-8 filter invert brightness-0"
-    
-                  onError={(e) => {
-            
-                    e.target.style.display = 'none';
-                  }}
-                />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">ENTNT Dental Center</h1>
-                <p className="text-sm text-gray-500">Patient Portal</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">Hi, {patientData.name.split(' ')[0]}</span>
-              <button 
-                onClick={handleLogout}
-                className="flex items-center space-x-2 text-gray-600 hover:text-red-600"
-                title="Logout"
-              >
-                <LogOut className="h-4 w-4" />
-              </button>
-              <div className="h-8 w-8 bg-blue-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-medium text-sm">
-                  {patientData.name.split(' ').map(n => n[0]).join('').toUpperCase()}
-                </span>
-              </div>
-            </div>
-          </div>
+  <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+    <div className="flex justify-between items-center h-16">
+      <div className="flex items-center space-x-2 sm:space-x-4 min-w-0">
+        <div className="bg-blue-500 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+          <img 
+            src="/assets/logo.png" 
+            alt="Logo" 
+            className="w-6 h-6 sm:w-8 sm:h-8 filter invert brightness-0"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
         </div>
-      </header>
+        <div className="min-w-0 flex-1">
+          <h1 className="text-sm sm:text-xl font-bold text-gray-900 truncate">ENTNT Dental</h1>
+          <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">Patient Portal</p>
+        </div>
+      </div>
+      <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+        <span className="text-xs sm:text-sm text-gray-600 hidden sm:inline">Hi, {patientData.name.split(' ')[0]}</span>
+        <button 
+          onClick={handleLogout}
+          className="flex items-center space-x-1 sm:space-x-2 text-gray-600 hover:text-red-600 p-1"
+          title="Logout"
+        >
+          <LogOut className="h-4 w-4" />
+          <span className="text-xs sm:hidden">Logout</span>
+        </button>
+        <div className="h-6 w-6 sm:h-8 sm:w-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+          <span className="text-white font-medium text-xs sm:text-sm">
+            {patientData.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-     
-        <div className="mb-8">
-          <nav className="flex space-x-6">
-            {[
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
+
+        
+        <div className="mb-4 sm:mb-8">
+  <nav className="flex space-x-1 sm:space-x-8 overflow-x-auto pb-2 sm:pb-0">
+           {[
               { id: 'overview', label: 'Overview', icon: User },
               { id: 'appointments', label: 'Appointments', icon: FileText },
               { id: 'calendar', label: 'Calendar', icon: Calendar }
