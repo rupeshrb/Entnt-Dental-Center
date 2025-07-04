@@ -408,10 +408,10 @@ const PatientDashboard = () => {
     };
 
     return (
-      <div className="space-y-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-800">Appointment Calendar</h1>
-          <div className="flex items-center space-x-4">
+    <div className="space-y-6">
+       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0">
+  <h1 className="text-xl sm:text-3xl font-bold text-gray-800">Appointment Calendar</h1>
+          <div className="flex items-center justify-center space-x-4">
             <button 
               onClick={goToPreviousMonth} 
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
