@@ -50,6 +50,8 @@ Password: patient123
 -Simulated login using localStorage
 -Protected routes with context-based auth
 
+
+
 👥 Admin Portal
 -Patient CRUD (Add/Edit/Delete)
 -Appointment lifecycle management
@@ -57,11 +59,15 @@ Password: patient123
 -Revenue & KPI dashboard
 -File uploads (base64) with preview
 
+
+
 🧾 Patient Portal
 -View personal profile
 -See upcoming & past appointments
 -Download attached files
 -Fully responsive UI
+
+
 
 🛠 Architecture
 📦 Tech Stack
@@ -73,24 +79,14 @@ Password: patient123
 -Lucide React	Icon library
 -localStorage	Data persistence (no backend)
 
-🗂 Folder Structure
-<br>public/
-<br>  └── assets/
-<br>src/
-<br>  ├── components/
-<br>  ├── context/
-<br>  ├── data/
-<br>  ├── pages/
-<br>  ├── App.js
-<br>  └── index.css
-<br>tailwind.config.js
-<br>package.json
 
 ❗ Known Issues
 -No actual backend or API (by design of assignment)
 -Authentication is simulated (no real user verification)
 -No form-level validation libraries used
 -Large component files could be refactored into smaller ones
+
+
 
 💡 Technical Decisions
 -Context API was used over Redux for simpler state sharing between auth and UI
